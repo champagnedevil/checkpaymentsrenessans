@@ -27,7 +27,7 @@ try:
     summ_list = (driver.find_element(By.TAG_NAME, "div").text)
     regex = r"^(\+.*) ₽"
     matches = re.finditer(regex, summ_list, re.MULTILINE)
-    print([e.group(1) for e in matches])
+    print([float(e.group(1)[1:].replace(",", ".").replace(" ", "")) for e in matches])
 except Exception as ex:
     print(ex)
 finally:
