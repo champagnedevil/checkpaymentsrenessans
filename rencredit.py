@@ -2,9 +2,10 @@ import time
 import re
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import os
 
-log = ""
-pas = ""
+log = os.getenv('login')
+pas = os.getenv('password')
 url = "https://ib.rencredit.ru/#/login"
 
 options = webdriver.ChromeOptions()
